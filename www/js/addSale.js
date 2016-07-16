@@ -22,7 +22,7 @@ var html_request;
         document.getElementById('submit').addEventListener('click', this.submit, false);
     },
     
-    submit : function($){
+    submitform : function($){
 
         // Abort any pending request
         if (html_request) {
@@ -57,6 +57,7 @@ var html_request;
         // var config = require('../sensitive_data/config');
         // console.log(config.form_script_url);
     
+   // https://script.google.com/macros/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec
     
       // Fire off the request to /form.php
         html_request = $.ajax({
