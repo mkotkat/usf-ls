@@ -3,26 +3,26 @@ var html_request;
 
 // Bind to the submit event of our form
 //$("#foo").submit(function(event){
-//  $("#usf-www-SubscriberForm").submit(function(event){
+$("#usf-ls-AddSalesForm").submit(function(event){
 
 
-  var request = {
+//   var request = {
       
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
+//     // Application Constructor
+//     initialize: function() {
+//         this.bindEvents();
+//     },
     
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        // document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.getElementById('submitform').addEventListener('click', this.submitform, false);
-    },
+//     // Bind Event Listeners
+//     //
+//     // Bind any events that are required on startup. Common events are:
+//     // 'load', 'deviceready', 'offline', and 'online'.
+//     bindEvents: function() {
+//         // document.addEventListener('deviceready', this.onDeviceReady, false);
+//         document.getElementById('submitform').addEventListener('click', this.submitform, false);
+//     },
     
-    submitform : function(){
+//     submitform : function(){
 
         // Abort any pending request
         if (html_request) {
@@ -37,8 +37,18 @@ var html_request;
         // var $inputs = $form.find("input, select, button, textarea");
         var $inputs = $form.find("input, select, button, textarea");
     
+        // var totalamount = document.getElementById('totalamount').value;
+        // var itemscount = document.getElementById('itemscount').value;
+        // var items = document.getElementById('items').value;
+        // var name = document.getElementById('name').value;
+        // var phone = document.getElementById('phone').value;
+        // var email = document.getElementById('email').value;
+        // var note = document.getElementById('note').value;
+    
+        vare data = { totalamount = document.getElementById('totalamount').value, itemscount = itemscount = document.getElementById('itemscount').value, items = document.getElementById('items').value};
         // Serialize the data in the form
-        var serializedData = $form.serialize();
+        //var serializedData = $form.serialize();
+        var serializedData = data.serialize();
     
         // Let's disable the inputs for the duration of the Ajax request.
         // Note: we disable elements AFTER the form data has been serialized.
@@ -64,7 +74,10 @@ var html_request;
         html_request = $.ajax({
             url: "https://script.google.com/a/macros/kotkat.org/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
             type: "post",
-            data: serializedData
+            beforeSend : function() {$.mobile.showPageLoadingMsg();},
+            complete   : function() {$.mobile.hidePageLoadingMsg();},
+            data: {totalamount='6',itemscount='1',items='to2'},
+            dataType   : 'json'
         });
     
         // Callback handler that will be called on success
