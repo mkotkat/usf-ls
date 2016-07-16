@@ -46,7 +46,7 @@ $("#usf-ls-AddSalesForm").submit(function(event){
         var _note = document.getElementById('note').value;
     
         //var data = { totalamount = document.getElementById('totalamount').value, itemscount = itemscount = document.getElementById('itemscount').value, items = document.getElementById('items').value};
-        var data = { totalamount : _totalamount, itemscount : _itemscount, items : _items };
+        var data = { totalamount : _totalamount, itemscount : _itemscount, items : _items, name : _name, phone: _phone, email : _email, note : _note  };
         // Serialize the data in the form
         //var serializedData = $form.serialize();
         var serializedData = data.serialize();
@@ -75,11 +75,14 @@ $("#usf-ls-AddSalesForm").submit(function(event){
         html_request = $.ajax({
             url: "https://script.google.com/a/macros/kotkat.org/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
             type: "post",
-            beforeSend : function() {$.mobile.showPageLoadingMsg();},
-            complete   : function() {$.mobile.hidePageLoadingMsg();},
+            
             data: serializedData
         });
     
+    // beforeSend : function() {$.mobile.showPageLoadingMsg();},
+            // complete   : function() {$.mobile.hidePageLoadingMsg();},
+            
+            
         // Callback handler that will be called on success
         html_request.done(function (response, textStatus, jqXHR){
             // Log a message to the console
@@ -107,6 +110,5 @@ $("#usf-ls-AddSalesForm").submit(function(event){
     
         // Prevent default posting of form
         event.preventDefault();
-    }
-
-};
+        
+    };
