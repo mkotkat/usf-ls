@@ -22,7 +22,7 @@ var html_request;
         document.getElementById('submitform').addEventListener('click', this.submitform, false);
     },
     
-    submitform : function($){
+    submitform : function(){
 
         // Abort any pending request
         if (html_request) {
@@ -30,7 +30,7 @@ var html_request;
         }
         // setup some local variables
         //var $form = $(this);
-        var $form = $(this);
+        var $form = $("#usf-ls-AddSalesForm");
         //var $form = (document.getElementById('usf-ls-AddSalesForm'));
     
         // Let's select and cache all the fields
