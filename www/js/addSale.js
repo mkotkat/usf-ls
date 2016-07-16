@@ -53,14 +53,14 @@
       //      data: serializedData
       //  });
       
-      // $ echo 'var sendata = { "form_script_host": "google", "form_script_url": "https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec" }; module.exports = sendata; ' > sendata.js 
-        var config = require('../sensitive_data/config');
-        console.log(config.form_script_url);
+        // $ echo 'var sendata = { "form_script_host": "google", "form_script_url": "https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec" }; module.exports = sendata; ' > sendata.js 
+        // var config = require('../sensitive_data/config');
+        // console.log(config.form_script_url);
     
     
       // Fire off the request to /form.php
         request = $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec",
+            url: "https://script.google.com/a/macros/kotkat.org/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
             type: "post",
             data: serializedData
         });
