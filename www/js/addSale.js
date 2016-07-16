@@ -1,5 +1,5 @@
 // Variable to hold request
-//var request;
+var html_request;
 
 // Bind to the submit event of our form
 //$("#foo").submit(function(event){
@@ -22,11 +22,11 @@
         document.getElementById('submit').addEventListener('click', this.submit, false);
     },
     
-    submit : function(){
+    submit : function($){
 
         // Abort any pending request
-        if (request) {
-            request.abort();
+        if (html_request) {
+            html_request.abort();
         }
         // setup some local variables
         //var $form = $(this);
@@ -59,14 +59,14 @@
     
     
       // Fire off the request to /form.php
-        request = $.ajax({
+        html_request = $.ajax({
             url: "https://script.google.com/a/macros/kotkat.org/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
             type: "post",
             data: serializedData
         });
     
         // Callback handler that will be called on success
-        request.done(function (response, textStatus, jqXHR){
+        html_request.done(function (response, textStatus, jqXHR){
             // Log a message to the console
             console.log("Hooray, it worked!");
             console.log(response);
@@ -75,7 +75,7 @@
         });
     
         // Callback handler that will be called on failure
-        request.fail(function (jqXHR, textStatus, errorThrown){
+        html_request.fail(function (jqXHR, textStatus, errorThrown){
             // Log the error to the console
             console.error(
                 "The following error occurred: "+
@@ -85,7 +85,7 @@
     
         // Callback handler that will be called regardless
         // if the request failed or succeeded
-        request.always(function () {
+        html_request.always(function () {
             // Reenable the inputs
             $inputs.prop("disabled", false);
         });
