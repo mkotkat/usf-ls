@@ -77,8 +77,7 @@ $("#usf-ls-AddSalesForm").submit(function(event){
             type: "post",
             beforeSend : function() {$.mobile.showPageLoadingMsg();},
             complete   : function() {$.mobile.hidePageLoadingMsg();},
-            data: {totalamount:'6',itemscount:'1',items:'to2'},
-            dataType   : 'json'
+            data: serializedData
         });
     
         // Callback handler that will be called on success
