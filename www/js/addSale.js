@@ -19,7 +19,7 @@ var html_request;
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         // document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.getElementById('submit').addEventListener('click', this.submit, false);
+        document.getElementById('submitform').addEventListener('click', this.submitform, false);
     },
     
     submitform : function($){
