@@ -37,15 +37,16 @@ $("#usf-ls-AddSalesForm").submit(function(event){
         // var $inputs = $form.find("input, select, button, textarea");
         var $inputs = $form.find("input, select, button, textarea");
     
-        // var totalamount = document.getElementById('totalamount').value;
-        // var itemscount = document.getElementById('itemscount').value;
-        // var items = document.getElementById('items').value;
-        // var name = document.getElementById('name').value;
-        // var phone = document.getElementById('phone').value;
-        // var email = document.getElementById('email').value;
-        // var note = document.getElementById('note').value;
+        var _totalamount = document.getElementById('totalamount').value;
+        var _itemscount = document.getElementById('itemscount').value;
+        var _items = document.getElementById('items').value;
+        var _name = document.getElementById('name').value;
+        var _phone = document.getElementById('phone').value;
+        var _email = document.getElementById('email').value;
+        var _note = document.getElementById('note').value;
     
-        vare data = { totalamount = document.getElementById('totalamount').value, itemscount = itemscount = document.getElementById('itemscount').value, items = document.getElementById('items').value};
+        //var data = { totalamount = document.getElementById('totalamount').value, itemscount = itemscount = document.getElementById('itemscount').value, items = document.getElementById('items').value};
+        var data = { totalamount : _totalamount, itemscount : _itemscount, items : _items };
         // Serialize the data in the form
         //var serializedData = $form.serialize();
         var serializedData = data.serialize();
@@ -76,7 +77,7 @@ $("#usf-ls-AddSalesForm").submit(function(event){
             type: "post",
             beforeSend : function() {$.mobile.showPageLoadingMsg();},
             complete   : function() {$.mobile.hidePageLoadingMsg();},
-            data: {totalamount='6',itemscount='1',items='to2'},
+            data: {totalamount:'6',itemscount:'1',items:'to2'},
             dataType   : 'json'
         });
     
