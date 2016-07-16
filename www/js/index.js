@@ -128,8 +128,12 @@ var app = {
     },
     
     newSale: function(){
-        window.open('/addSale.form.html', '_blank', 'location=yes');
-        
+        //window.open('addSale.form.html', '_blank', 'location=yes');
+        window.location = "addSale.html";
+    },
+    
+    newSaleForm: function(){
+        window.location = "addSale.form.html";
     }
     
 };
