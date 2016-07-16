@@ -35,52 +35,60 @@
           <div class="wrapper">
      		
             <p>
-              <center>
-                سجلى بياناتك معنا لتصلك مقالاتنا ونصائحنا فى عالم الموضه والجمال واجدد العروض والخصومات من شركتنا
-              </center>
+                <center>
+                        New Sales
+                </center>
             </p>
             <!-- Contact Form - sent to a Google Sheet -->
-            <form id='usf-www-SubscriberForm'>
+            <form id='usf-ls-AddSalesForm'>
                 <p>
-                    <label>Total Amount</label>
-                    <input id='name' name='name' type='text' class="input-group-field newsletter__input">
+                    <label>Total Amount</label><br>
+                    <input id='totalamount' name='totalamount' type='text' class="input-group-field newsletter__input">
                 </p>
                 <p>
-                    <label>Name</label>
-                    <input id='name' name='name' type='text' class="input-group-field newsletter__input">
+                    <label>Name</label><p></p>
+                    <input id='itemscount' name='itemscount' type='text' class="input-group-field newsletter__input">
                 </p>
                 <p>
                     <label>Note</label>
-                    <textarea id='note' name='note' rows='2'></textarea>
+                    <textarea id='items' name='items' rows='2'></textarea>
                 </p>
                 <p>
                     <label>Name</label>
                     <input id='name' name='name' type='text' class="input-group-field newsletter__input">
-                </p>
-                <p>
-                    <label>Email Address</label>
-                    <input id='email' name='email' type='email' class="input-group-field newsletter__input">
                 </p>
                 <p>
                     <label>Phone Number</label>
                     <input id='phone' name='phone' type='tel' class="input-group-field newsletter__input">
                 </p>
                 <p>
+                    <label>Email Address</label>
+                    <input id='email' name='email' type='email' class="input-group-field newsletter__input">
+                </p>
+                <p>
                     <label>Note</label>
                     <textarea id='note' name='note' rows='2'></textarea>
                 </p>
+                
                 <div id='success'></div>
-                <button type='submit'class="btn newsletter__submit">
-                  <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
-                  <span class="newsletter__submit-text--small">
-                  <span class="icon icon-arrow-right" aria-hidden="true"></span>
-                          </span>
-              </button>
+              <!--  <button id="submit" type='submit'class="btn newsletter__submit">-->
+              <!--    <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>-->
+              <!--    <span class="newsletter__submit-text--small">-->
+              <!--    <span class="icon icon-arrow-right" aria-hidden="true"></span>-->
+              <!--            </span>-->
+              <!--</button>-->
+              
+              <button id="submit" type='submit'></button>
             </form>
           </div>
         </div>
         
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/addSale.googlesheet.js"></script>
+        <!--<script type="text/javascript" src="js/addSale.googlesheet.js"></script>-->
+        <script type="text/javascript" src="js/addSale.js"></script>
+        <script type="text/javascript">
+            request.initialize();
+        </script>
     </body>
 </html>

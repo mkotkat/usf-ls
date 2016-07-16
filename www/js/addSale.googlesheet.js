@@ -3,7 +3,7 @@ var request;
 
 // Bind to the submit event of our form
 //$("#foo").submit(function(event){
-  $("#usf-www-SubscriberForm").submit(function(event){
+  $("#usf-ls-addSalesForm").submit(function(event){
   
 
     // Abort any pending request
