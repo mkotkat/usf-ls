@@ -3,7 +3,7 @@ var request;
 
 // Bind to the submit event of our form
 //$("#foo").submit(function(event){
-  $("#usf-ls-addSalesForm").submit(function(event){
+  $("#usf-ls-AddSalesForm").submit(function(event){
   
 
     // Abort any pending request
@@ -15,7 +15,7 @@ var request;
 
     // Let's select and cache all the fields
     // var $inputs = $form.find("input, select, button, textarea");
-    var $inputs = $form.find("input, select, button");
+    var $inputs = $form.find("input, select, button, textarea");
 
     // Serialize the data in the form
     var serializedData = $form.serialize();
@@ -25,8 +25,6 @@ var request;
     // Disabled form elements will not be serialized.
     $inputs.prop("disabled", true);
 
-  //"SCRIPT URL GOES HERE"
-  //https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec
     
   // Fire off the request to /form.php
   //  request = $.ajax({
@@ -36,13 +34,13 @@ var request;
   //  });
   
   // $ echo 'var sendata = { "form_script_host": "google", "form_script_url": "https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec" }; module.exports = sendata; ' > sendata.js 
-    var config = require('../sensitive_data/config');
-    console.log(config.form_script_url);
+    // var config = require('../sensitive_data/config');
+    // console.log(config.form_script_url);
 
 
   // Fire off the request to /form.php
     request = $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbwHlxyMgAxNZ8P-uIDb3ViKS2qcmbyIx37Gtvtm0oNtlmwS4v-A/exec",
+        url: "https://script.google.com/macros/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
         type: "post",
         data: serializedData
     });
