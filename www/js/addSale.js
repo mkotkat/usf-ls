@@ -30,8 +30,8 @@ var html_request;
         }
         // setup some local variables
         //var $form = $(this);
-        var $form = $("#usf-ls-AddSalesForm");
-        //var $form = (document.getElementById('usf-ls-AddSalesForm'));
+        //var $form = $("#usf-ls-AddSalesForm");
+        var $form = document.getElementById('usf-ls-AddSalesForm');
     
         // Let's select and cache all the fields
         // var $inputs = $form.find("input, select, button, textarea");
