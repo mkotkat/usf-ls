@@ -75,7 +75,6 @@ $("#usf-ls-AddSalesForm").submit(function(event){
         html_request = $.ajax({
             url: "https://script.google.com/a/macros/kotkat.org/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
             type: "post",
-            
             data: serializedData
         });
     
@@ -111,4 +110,5 @@ $("#usf-ls-AddSalesForm").submit(function(event){
         // Prevent default posting of form
         event.preventDefault();
         
-    };
+        
+});
