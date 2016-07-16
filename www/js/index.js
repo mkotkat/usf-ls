@@ -27,6 +27,10 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.getElementById('scan').addEventListener('click', this.scan, false);
+        document.getElementById('encode').addEventListener('click', this.encode, false);
+        document.getElementById('newSale').addEventListener('click', this.newSale, false);
+        document.getElementById('newCustomer').addEventListener('click', this.newCustomer, false);
     },
     // deviceready Event Handler
     //
@@ -45,5 +49,71 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+        
+        
+    //     scan: function() {
+    //     console.log('scanning');
+        
+    //     var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+    //     scanner.scan( function (result) { 
+
+    //         alert("We got a barcode\n" + 
+    //         "Result: " + result.text + "\n" + 
+    //         "Format: " + result.format + "\n" + 
+    //         "Cancelled: " + result.cancelled);  
+
+    //       console.log("Scanner result: \n" +
+    //             "text: " + result.text + "\n" +
+    //             "format: " + result.format + "\n" +
+    //             "cancelled: " + result.cancelled + "\n");
+    //         document.getElementById("info").innerHTML = result.text;
+    //         console.log(result);
+    //         /*
+    //         if (args.format == "QR_CODE") {
+    //             window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
+    //         }
+    //         */
+
+    //     }, function (error) { 
+    //         console.log("Scanning failed: ", error); 
+    //     } );
+    // },
+
+    // encode: function() {
+    //     var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+    //     scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
+    //         alert("encode success: " + success);
+    //       }, function(fail) {
+    //         alert("encoding failed: " + fail);
+    //       }
+    //     );
+
+    // }
+    
+    scan: function() {
+        console.log('scanning');
+        
+    cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+      }, 
+      function (error) {
+          alert("Scanning failed: " + error);
+      },
+      {
+          "preferFrontCamera" : true, // iOS and Android
+          "showFlipCameraButton" : true, // iOS and Android
+          "prompt" : "Place a barcode inside the scan area", // supported on Android only
+          "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
+      }
+    );
     }
+    
 };
