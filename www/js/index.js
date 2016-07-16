@@ -133,7 +133,7 @@ var app = {
     },
     
     newSaleForm: function(){
-        window.location = "addSale.form.html";
+        window.location = "addSale-form.html";
     }
     
 };
