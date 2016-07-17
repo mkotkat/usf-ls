@@ -53,7 +53,7 @@ var request;
         console.log(textStatus);
         console.log(jqXHR);
         //// Go to home page
-        //window.location = "index.html?username=" + document.getElementById("username").value;
+        window.location = "index.html?username=" + document.getElementById("username").value;
         
         //x//document.getElementById("usernamebox").setAttribute("value", document.getElementById("username").value);
         //x//document.getElementById("usernamebox").value = document.getElementById("username").value;
