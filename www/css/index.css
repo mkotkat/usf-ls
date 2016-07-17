@@ -37,12 +37,15 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:18px;
     height:100%;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
     width:100%;
+    text-align:center;
+    top:50%;
+    position:absolute;             /* position in the center of the screen */
 }
 
 /* Portrait layout (default) */
@@ -70,6 +73,24 @@ body {
 }
 
 h1 {
+    font-size:30px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+h2 {
+    font-size:26px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+p { 
     font-size:24px;
     font-weight:normal;
     margin:0px;

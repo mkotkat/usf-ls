@@ -25,8 +25,8 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=3, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/addSale.css" />
         <title>USF Local Store</title>
     </head>
     <body>
@@ -34,11 +34,11 @@
         <div class="newsletter">
           <div class="wrapper">
      		
-            <p>
+            <h1>
                 <center>
                         New Sales
                 </center>
-            </p>
+            </h1>
             <!-- Contact Form - sent to a Google Sheet -->
             <form id='usf-ls-AddSalesForm'>
                 <p>
@@ -52,6 +52,7 @@
                 <p>
                     <label>Items description</label><br>
                     <textarea id='items' name='items' rows='2'></textarea>
+                    <a href="#" class="topcoat-button" id="scan">SCAN</a>
                 </p>
                 <p>
                     <label>Customer Name</label><br>
@@ -87,10 +88,6 @@
         
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
         <!--<script type="text/javascript" src="cordova.js"></script>-->
-        <script type="text/javascript" src="js/addSale_googlesheet.js"></script>
-        <!--<script type="text/javascript" src="js/addSale.js"></script>-->
-        <!--<script type="text/javascript">
-            request.initialize();
-        </script>-->
+        <script type="text/javascript" src="js/addSale.js"></script>
     </body>
 </html>
