@@ -13,10 +13,10 @@ var request;
     // setup some local variables
     var $form = $(this);
 
-    //// Problem: Form will not submit diable inputs "input:disabled" <input id='username' name='username' type='text' rows='2' disabled></input>
+    //// Problem: Form will not submit diabled inputs "input:disabled" <input id='username' name='username' type='text' rows='2' disabled></input>
     //// =======
     //// solution #1
-    //// enable the control -> submit , then disable again if ablecable 
+    //// enable the control -> submit , then disable again if applicable 
     //document.getElementById("username").disabled = false;
     //// solution #2
     //// do not use disabled attribute - instead use readonly attribute
