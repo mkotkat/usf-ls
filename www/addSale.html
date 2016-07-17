@@ -43,16 +43,16 @@
             <form id='usf-ls-AddSalesForm'>
                 <p>
                     <label>Total Amount</label><br>
-                    <input id='totalamount' name='totalamount' type='text' class="input-group-field newsletter__input">
+                    <input id='totalamount' name='totalamount' type='number' class="input-group-field newsletter__input">
                 </p>
                 <p>
                     <label>Number of Items</label><br>
-                    <input id='itemscount' name='itemscount' type='text' class="input-group-field newsletter__input">
+                    <input id='itemscount' name='itemscount' type='number' class="input-group-field newsletter__input">
                 </p>
                 <p>
                     <label>Items description</label><br>
                     <textarea id='items' name='items' rows='2'></textarea>
-                    <a href="#" class="topcoat-button" id="scan">SCAN</a>
+                    <a href="#" class="topcoat-button" id="scan">  SCAN  </a>
                 </p>
                 <p>
                     <label>Customer Name</label><br>
@@ -69,6 +69,15 @@
                 <p>
                     <label>Note</label><br>
                     <textarea id='note' name='note' rows='2'></textarea>
+                </p>
+                
+                <p>
+                    <label>by: </label>
+                    <label id='usernamelabel' name='usernamelabel'></label><br>
+                    <!--disabled-->
+                    <!--readonly-->
+                    <input id='username' name='username' type='text' rows='2' readonly></input>
+                    <!--<a href="#" class="topcoat-button" id="login" onclick="window.location='login.html';">Login</a>-->
                 </p>
                 
                 <div id='success'></div>
@@ -88,6 +97,26 @@
         
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
         <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <!--<script type="text/javascript" src="barcodescanner.js"></script>-->
         <script type="text/javascript" src="js/addSale.js"></script>
+        <script type="text/javascript" src="js/scanitem.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script>
+            // function getParameterByName(name, url) {
+                // if (!url) url = window.location.href;
+            function getParameterByName(name) {
+                var url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            
+            var _username = getParameterByName("username")
+            document.getElementById("username").value = _username;
+            document.getElementById('usernamelabel').innerHTML = _username;
+        </script>
     </body>
 </html>

@@ -26,21 +26,34 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/login.css" />
         <title>USF Local Store</title>
     </head>
     <body>
         <div>
             <h1>Login</h1>
-            <input id="email" type="email" placeholder="email@domain.com" />
-            <input id="password" type="password" placeholder="password" />
-            <button id="login">Login</button>
+            <!-- Contact Form - sent to a Google Sheet -->
+            <form id='usf-ls-LoginForm'>
+                <p>
+                    <!--<label>Username</label><br>-->
+                    <input id='username' name='username' type='text' placeholder='user name'>
+                </p>
+                <p>
+                    <!--<label>Password</label><br>-->
+                    <input id='pass' name='pass' type='password' placeholder='pass' class="input-group-field newsletter__input">
+                </p>
+                
+                <p><br></p>
+                
+                <button id="loginbtn" type='submit'>
+                  <span class="newsletter__submit-text--large">Login</span>
+                </button>
+            </form>
 
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="js/login.js"></script>
     </body>
 </html>

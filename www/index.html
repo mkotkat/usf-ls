@@ -29,8 +29,14 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>USF Local Store</title>
     </head>
-    <body>
-        <div class="body">
+    <body >
+        <div class="loginarea">
+                <label id="loginWelcome">Hi, </label>
+                <a href="#" class="topcoat-button" id="login" onclick="window.location='login.html';">Login</a>
+                <input type="text" id="usernamebox" name="username" hidden/>
+                <label id="loginWelcome2" > ! </label>
+            </div>
+        <div class="mainbody">
             <h1>UniqueStyle</h1>
             <h2>Local Store</h2>
             <p></p>
@@ -55,6 +61,36 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+        </script>
+        <script>
+            // function getParameterByName(name, url) {
+                // if (!url) url = window.location.href;
+            function getParameterByName(name) {
+                var url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            
+                var _username = getParameterByName("username");
+                
+            if(_username!=null)
+            {
+                //document.getElementById("login").textContent = getParameterByName("username");
+                document.getElementById("login").textContent = _username;
+                document.getElementById("usernamebox").value = _username;
+                document.getElementById("loginWelcome").setAttribute("visible", true);
+                document.getElementById("loginWelcome2").setAttribute("visible", true);
+            }
+            else
+            {
+                document.getElementById("login").textContent ="Login"
+                document.getElementById("loginWelcome").setAttribute("hidden", true);
+                document.getElementById("loginWelcome2").setAttribute("hidden", true);
+            }
         </script>
     </body>
 </html>

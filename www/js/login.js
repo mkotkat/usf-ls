@@ -3,7 +3,7 @@ var request;
 
 // Bind to the submit event of our form
 //$("#foo").submit(function(event){
-  $("#usf-ls-AddSalesForm").submit(function(event){
+  $("#usf-ls-LoginForm").submit(function(event){
   
 
     // Abort any pending request
@@ -13,16 +13,6 @@ var request;
     // setup some local variables
     var $form = $(this);
 
-    //// Problem: Form will not submit diable inputs "input:disabled" <input id='username' name='username' type='text' rows='2' disabled></input>
-    //// =======
-    //// solution #1
-    //// enable the control -> submit , then disable again if ablecable 
-    //document.getElementById("username").disabled = false;
-    //// solution #2
-    //// do not use disabled attribute - instead use readonly attribute
-    //// <input id='username' name='username' type='text' rows='2' readonly></input>
-    //// -- problem solved using solution #2
-    
     // Let's select and cache all the fields
     // var $inputs = $form.find("input, select, button, textarea");
     var $inputs = $form.find("input, select, button, textarea");
@@ -51,19 +41,22 @@ var request;
   // Fire off the request to /form.php
     request = $.ajax({
         url: "https://script.google.com/macros/s/AKfycbxtLitamwH3VQik3laGJoVEJV47k2AktROR0cdspwmUQT_3MVO2/exec",
-        type: "post",
+        type: "get",
         data: serializedData
     });
 
     // Callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
-        console.log("Hooray, it worked!");
+        console.log("Login, authorized !");
         console.log(response);
         console.log(textStatus);
         console.log(jqXHR);
-        //Go Home
-        window.location = "index.html?username=" + document.getElementById("username").value;
+        //// Go to home page
+        //window.location = "index.html?username=" + document.getElementById("username").value;
+        
+        //x//document.getElementById("usernamebox").setAttribute("value", document.getElementById("username").value);
+        //x//document.getElementById("usernamebox").value = document.getElementById("username").value;
     });
 
     // Callback handler that will be called on failure
@@ -84,29 +77,4 @@ var request;
 
     // Prevent default posting of form
     event.preventDefault();
-    
-    // scan: function() {
-    //     console.log('scanning');
-        
-    //     cordova.plugins.barcodeScanner.scan(
-    //       function (result) {
-    //           alert("We got a barcode\n" +
-    //                 "Result: " + result.text + "\n" +
-    //                 "Format: " + result.format + "\n" +
-    //                 "Cancelled: " + result.cancelled);
-    //       }, 
-    //       function (error) {
-    //           alert("Scanning failed: " + error);
-    //       },
-    //       {
-    //           "preferFrontCamera" : true, // iOS and Android
-    //           "showFlipCameraButton" : true, // iOS and Android
-    //           "prompt" : "Place a barcode inside the scan area", // supported on Android only
-    //           "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-    //           "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
-    //       }
-    //     );
-    // };
-    
 });
-
